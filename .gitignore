@@ -201,6 +201,16 @@ cython_debug/
 .cursorignore
 .cursorindexingignore
 
+# Claude
+.claude/
+memory/
+
+# Report
+report.*
+
+# TensorBoard logs
+highway/
+
 # Marimo
 marimo/_static/
 marimo/_lsp/

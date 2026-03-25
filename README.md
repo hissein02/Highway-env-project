@@ -1,78 +1,54 @@
-# Final Project: [HighwayEnv](https://github.com/Farama-Foundation/HighwayEnv/tree/master)
+# Highway-Env: Reinforcement Learning Project
 
-Welcome in the repository for the final project of the Reinforcement learning course !
+RL course final project — training agents to drive on a highway using DQN (from scratch) and PPO (Stable-Baselines3).
 
-## 👉 Your task: Solve the Highway
-
-Your objective will be to teach an agent how to drive on a highway, among many cars.
-
-<div align="center">
+**Students:** DOUDOU Hissein, ADMANTA Kamelia
 
 ![](https://raw.githubusercontent.com/eleurent/highway-env/gh-media/docs/media/highway.gif?raw=true)
-</div>
 
-- By Group of two
-- Use *at least* two different RL Algorithms
-  - try to implement at least one 'by hand'
+## Results
 
+| Model | Mean Reward | Notes |
+|-------|-------------|-------|
+| DQN (ours) | **33.40 ± 8.15** | Best score, built from scratch |
+| PPO (SB3) | ~27.8 | Plateaued early |
 
-### Evaluation
-*Based on the report (showing that you understood what you did), the performances and the code (you built something that works).*
+Evaluated on the hard config: 40 aggressive vehicles, tight spacing.
 
-- **Produce a notebook**
-  -  The notebook must run one one go, I will not loose time trying to fix your env...
-  - Possible to send a git repo with the weight so that I can run them locally.
-- **Produce a 2-5 pages report**
-  - Describe Your choices and explain the algorithms used.
-  - Benchmark and compare them depending on their hyperparameters.
-
-*Analysis could include exploration of hyperparameters, figures of training, explainations of how your algorithm works*
-
-### Roadmap
-- 📆 **23 Feb**: your groups are all complete.
-- 📆 **20 March** : Deadline for the report (5-10 pages) and code (notebook / script)
-
-
-
-### Ressources
-
-Here are some useful links for documentation and examples.
-- **Highway-env** [👨‍💻Repo](https://github.com/Farama-Foundation/HighwayEnv/tree/master) | [📜Documentation](http://highway-env.farama.org/quickstart/)
-- **OpenAI Gym**
-- **Stable-Baselines3**: [👨‍💻Repo](https://github.com/DLR-RM/stable-baselines3) | [📜Documentation](https://stable-baselines.readthedocs.io/en/master/)
-
-
-# Usage
-
-### Install Locally 
-
-The best way to to perform well is to install this repo on your machine, so that you can train for longer, test more intensive stuff without relying on the limited colab features.
-
-This repository hosts all requirements necessary, 
+## Setup
 
 ```bash
-git clone https://github.com/VictorMorand/Highway-env-project.git 
+git clone https://github.com/hissein02/Highway-env-project.git
 cd Highway-env-project
 ```
-I recommend using [`uv`](https://docs.astral.sh/uv/) to automatically create a working venv in a few seconds. You can optionally fork this repository to share between the group.
 
+Install with [uv](https://docs.astral.sh/uv/) (recommended):
 ```bash
-uv sync 
+uv sync
 ```
-you can also install with pip (works using python 3.10)
 
+Or with pip:
 ```bash
 pip install -r requirements.txt
 ```
 
-### Colab 
+## Usage
 
-If you don't have a powerful enough machine, you can still use the main notebook in colab : 
-[![Try in Colab !](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/VictorMorand/Highway-env-project/blob/main/Final_Project.ipynb)
+Open `Final_Project.ipynb` and run all cells. Training flags (`TRAIN_DQN`, `TRAIN_PPO`) are set to `False` by default — the notebook loads pre-trained weights and runs evaluation directly.
 
-# Problems 
+To retrain, set the flags to `True` and run the training cells.
 
-If you ahave any issues with the code, do not hesitae to reach out !
+## Files
 
+| File | Description |
+|------|-------------|
+| `Final_Project.ipynb` | Main notebook with all code |
+| `highway_dqn_v6.pth` | DQN weights (PyTorch) |
+| `highway_ppo_v4.zip` | PPO weights (SB3) |
+| `racetrack_ppo.zip` | Bonus: PPO on racetrack |
+| `report.tex` | LaTeX source for the report |
 
+## Resources
 
+- [Highway-Env docs](http://highway-env.farama.org/quickstart/)
+- [Stable-Baselines3 docs](https://stable-baselines.readthedocs.io/en/master/)
