@@ -45,6 +45,7 @@ To retrain, set the flags to `True` and run the training cells.
 | `Final_Project.ipynb` | Main notebook with all code |
 | `highway_dqn_v6.pth` | DQN weights (PyTorch) |
 | `highway_ppo_v4.zip` | PPO weights (SB3) |
+| `REPORT.pdf` | Project report |
 
 ## Resources
 
