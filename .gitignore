@@ -206,7 +206,8 @@ cython_debug/
 memory/
 
 # Report
-report.*
+report.md
+report.tex
 
 # TensorBoard logs
 highway/
